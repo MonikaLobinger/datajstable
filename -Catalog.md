@@ -122,7 +122,7 @@ const pages = dv
   .map(p => [
 	"[[" + p.file.path + "|" + p.file.name.slice(4) + "]]",
     "DDC"+p.ddckey,
-    p.media.join()
+    p.media ? p.media.join() : ""
   ])
 );
 ```
@@ -249,7 +249,7 @@ const asypages = await Promise.all(
 );
 
 dv.table(["Filelink", "ddclong", "Media"], asypages
-  .sort(asyp => asyp.ddckey)   
+  .sort((a,b) => a.ddckey - b.ddckey)   
   .map(asyp => [
     asyp.fl, 
     asyp.ddc, 
@@ -261,3 +261,10 @@ dv.table(["Filelink", "ddclong", "Media"], asypages
 The asynchronous call for the content now is done while getting the pages. It returns another object than `dv.pages`, so the result is named `asypages`.
 
 Only in the asynchronous part one can access the file content. So formatting a field which uses file content has to be done in the asynchronous part. The formatting functions are called from within it. The formatted values are returned.
+
+## Extra Plus
+```dataviewjs
+await dv.executeJs(await dv.io.load("catalog.js"));
+```
+### Description
+The code can be written in a java script file. This file can be loaded and executed. So same query can be used to construct same table on different pages.
