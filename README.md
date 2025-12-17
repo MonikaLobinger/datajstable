@@ -13,7 +13,7 @@ Using Dataviewjs to  create a table in Obsidian, which uses file contents. Show 
 
 File [-Catalog.md](-Catalog.md) contains the dataviewjs code and explanation. Does only work in  Obsidian.
 
-## Obsidian Tabelle mit erster Überschrift anstatt Dateinamen
+## Obsidian Tabelle mit erster Level2 Überschrift anstatt Dateinamen
 ![PuttingItAllTogether.png](PuttingItAllTogether.png)
 ## Der Code dafür
 ```
