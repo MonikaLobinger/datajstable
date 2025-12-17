@@ -14,8 +14,9 @@ Using Dataviewjs create a table in Obsidian, which uses file contents. Show how 
 File [-Catalog.md](-Catalog.md) contains the dataviewjs code and explanation. Does only work in  Obsidian.
 
 ## Obsidian Tabelle mit erster Überschrift anstatt Dateinamen
-
-```dataviewjs
+![PuttingItAllTogether.png](PuttingItAllTogether.png)
+## Der Code dafür
+```
 const len = 60;
 const eval_foldername = `"${dv.current().file.folder}"`;
 const foldername = dv.current().file.folder;
